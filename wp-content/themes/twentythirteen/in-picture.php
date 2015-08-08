@@ -14,33 +14,35 @@
  * @since twentythirteen
  */
 
-get_header(); ?>
-	<div class="bgslider newsslider">
-		<div style="background-color: #171717;" class="inside">
-			<img class="homebg" src="/wp-content/themes/twentytwelve/images/service/service.jpg" alt="">
-			<div class="servicetext textwrapper">
-				<h3 class="title">SERVICES</h3>
-			</div>
-		</div>
-	</div>
-	<div style="color:#fff;"class="servicepost" id="content">
-		<?php $args = array( 'post_type' => 'services', 'posts_per_page' => -1 );
-				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<a rel="<?php the_ID(); ?>" class="serviceposts" style="text-decoration:none;" href="<?php the_permalink(); ?>" >
-				<div class="postwrapper post">
-					<h1 class="entry-title">
-						<?php the_title(); ?>
-					</h1>
-					<div class="sfouter">
-						<div class="servicefeature">
-							<?php the_post_thumbnail(); ?>
-						</div>
-					</div>
-					<?php the_excerpt(); ?>
-				</div>
-			</a>
-		<?php endwhile; // end of the loop. ?>
-	</div>
 
-<?php get_footer(); ?>
+get_header(); ?>
+<body <?php body_class(); ?>>
+	<div class="content">
+		<section id="pictureone" class="pictureone">
+			<div id="navbar" class="navbar">
+				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+					<button class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></button>
+					<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen'); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+				</nav><!-- #site-navigation -->
+			</div><!-- #navbar -->
+			<div class="inside">
+				<h1>What does Bu Er means</h1>
+				<h3>ISSUE 4  |  Feb. 2015</h3>
+				<p>Bu Er is a Hindu-Buddhist concept meaning “not-two”. We borrow the term to denote our mission. Living in a time of global exchange, we wish to move away from a world that is divided into disparate countries, and away from the ‘East-West’ paradigm. Focusing on China, we do this by engaging her ancient heritage and multi-faceted worldview with global relevance, such that we can begin to uncover what the Chinese nation may provide, and formulate a cultural narrative that acts as one part of a new, cross-cultural dialogue. </p>
+			</div>
+		
+		</section>
+		<section class="pastissue">
+			<div class="pastissuetop">
+				<h1>PAST ISSUES</h1>
+				<div class="line"></div>	
+				<p> We Are a Off and On-line Student Project where a truly global interchange of creative and <br>intellectual ideas is made possible for the first time.</p>
+			</div>
+			<div class="issuecontent">
+				<div class="issueleft"></div>
+				<div class="issueright"></div>			
+			</div>
+		</section>
+	</div>
+</body>
